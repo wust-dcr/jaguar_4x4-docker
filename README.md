@@ -1,5 +1,5 @@
 # jaguar_4x4-docker
-Dockerized [decawave_ros](https://github.com/wust-dcr/jaguar_4x4_ros) available in ROS 1 Noetic.
+Dockerized [jaguar_4x4-_ros](https://github.com/wust-dcr/jaguar_4x4_ros) available in ROS 1 Noetic.
 
 
 |        |  Docker |
