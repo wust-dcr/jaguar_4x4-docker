@@ -1,14 +1,16 @@
 services:
   jaguar:
-   build: ..
-   network: host
-   environment: 
-    - ROS_MASTER_URI=http://localhost:11311/
-   command:  rosrun drrobot_jaguar4x4_player drrobot_jaguar4x4_player_node
+    build: ..
+    network_mode: host
+    ipc: host
+    environment: 
+      - ROS_MASTER_URI=http://localhost:11311/
+    command:  rosrun drrobot_jaguar4x4_player drrobot_jaguar4x4_player_node
 
   roscore:
-   build: ..
-   network: host
-   environment: 
-    - ROS_MASTER_URI=http://localhost:11311/
-   command:  roscore
+    build: ..
+    network_mode: host
+    ipc: host
+    environment: 
+      - ROS_MASTER_URI=http://localhost:11311/
+    command:  roscore
