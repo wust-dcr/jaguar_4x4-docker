@@ -6,7 +6,7 @@ WORKDIR /ros_ws
 RUN apt-get update && apt-get install -y git && \
      apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
-    
+
 RUN git clone https://github.com/wust-dcr/jaguar_4x4_ros --recursive src/ && \
     source /opt/ros/$ROS_DISTRO/setup.bash && \
     rm -rf /etc/ros/rosdep/sources.list.d/20-default.list && \
@@ -14,6 +14,8 @@ RUN git clone https://github.com/wust-dcr/jaguar_4x4_ros --recursive src/ && \
     rosdep init && \
     rosdep update --rosdistro $ROS_DISTRO && \
     rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y && \
+    catkin_make || true && \
+    source devel/setup.bash && \
     catkin_make
 
 FROM ros:$ROS_DISTRO-ros-base
